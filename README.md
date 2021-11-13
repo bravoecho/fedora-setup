@@ -1,8 +1,38 @@
 Install minimal version of Fedora server:
 
 * Standard server image: <https://getfedora.org/en/server/download/>
+
+* Create a VM with at least 3 GB RAM and 30 GB storage
+
 * Keyboard: accept defaults
+
   ![Keyboard selection](./img/01-keyboard.png)
+
+* Create an admin user:
+
+  ![Summary - initial](./img/02-summary.png)
+
+  ![User creation](./img/03-user.png)
+
+* Configure disk. It is not recommended to encrypt the device, as it reduces
+  the ability to compress the machine backup. Encrypting the backups is instead
+  advised.
+
+  ![Summary - in progress](./img/04-summary.png)
+
+  ![Disk configuration](./img/05-disk.png)
+
+* Choose the minimal installation (~1.3 GB):
+
+  ![Summary - in progress, 2](./img/06-summary.png)
+
+  ![Custom package selection](./img/07-packages.png)
+
+  ![Minimal installation](./img/08-minimal.png)
+
+* Complete:
+
+  ![Complete](./img/09-complete.png)
 
 Get VM's local IP to log in via SSH:
 
