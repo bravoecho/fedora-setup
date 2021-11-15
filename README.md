@@ -60,7 +60,7 @@ Install tools:
       direnv \
       exa \
       fd-find \
-      git-core \
+      git \
       git-delta \
       glibc \
       groff \
