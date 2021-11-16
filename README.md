@@ -72,11 +72,11 @@ Install tools:
       nmap \
       nnn \
       nodejs \
-      yarnpkg \
+      ntpsec \
       openssl \
-      pipx \
-      pigz \
       pbzip2 \
+      pigz \
+      pipx \
       ripgrep \
       rsync \
       ruby \
@@ -87,6 +87,7 @@ Install tools:
       util-linux-user \
       vim-enhanced \
       wget \
+      yarnpkg \
       zip \
       zoxide \
       zsh
