@@ -177,3 +177,11 @@ practically everything natively:)
     sudo usermod -aG docker $USER
     newgrp docker
     docker run hello-world
+
+Synchronise system clock after suspending the host machine. Depending on the
+virtualisation solution, putting the physical machine to sleep might cause the
+clock in the virtual machine to get out of sync, causing problems with some
+logins such as AWS. To resolve this issue run the following command once or
+twice:
+
+    sudo ntpdate pool.ntp.org
