@@ -82,6 +82,7 @@ Install tools:
       ruby \
       sqlite \
       tar \
+      tree \
       tmux \
       unzip \
       util-linux-user \
