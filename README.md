@@ -53,7 +53,13 @@ Prepare for installations:
 
     sudo dnf remove -y vim-minimal
     
-    sudo dnf upgrade-minimal
+    sudo dnf upgrade
+
+Reboot, as it will almost certainly have upgraded the kernel.
+
+Remove old unused kernel(s):
+
+    sudo dnf remove $(dnf repoquery --installonly --latest-limit=-1 -q)
 
 Install tools:
 
