@@ -114,14 +114,15 @@ Install git utilities:
 Install `ruby-install`, a tool install different Ruby versions for the current
 user:
 
+    cd ~/Downloads
     wget -O ruby-install-0.8.3.tar.gz https://github.com/postmodern/ruby-install/archive/v0.8.3.tar.gz
     tar -xzvf ruby-install-0.8.3.tar.gz
     cd ruby-install-0.8.3/
     sudo make install
+    cd ..
+    rm ruby-install-0.8.3* -rf
 
-Install dotfiles (optional, but recommended as a highly curated set of settings
-for a development environment, including Vim, Tmux, zsh and all the terminal
-utilities:)
+Install dotfiles (optional, recommended)
 
     git clone git@github.com:bravoecho/dotfiles.git ~/workspace/dotfiles
     cd ~/workspace/dotfiles
@@ -163,6 +164,7 @@ Install Terraform:
     wget https://releases.hashicorp.com/terraform/1.0.10/terraform_1.0.10_linux_arm64.zip
     unzip terraform_1.0.10_linux_arm64.zip
     mv terraform ~/.local/bin
+    cd -
 
 Set up Docker (optional, as having a proper Linux setup allows to execute
 practically everything natively:)
