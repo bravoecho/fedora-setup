@@ -68,6 +68,7 @@ Install tools:
 
     sudo dnf install -y \
       bat \
+      ctags \
       direnv \
       exa \
       fd-find \
@@ -94,8 +95,8 @@ Install tools:
       sqlite \
       tar \
       tig \
-      tree \
       tmux \
+      tree \
       unzip \
       util-linux-user \
       vim-enhanced \
