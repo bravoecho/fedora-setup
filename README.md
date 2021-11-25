@@ -34,14 +34,17 @@ Install minimal version of Fedora server:
 
   ![Complete](./img/09-complete.png)
 
-Get VM's local IP to log in via SSH:
+Logging in from the virtualisation software terminal is only necessary once.
+Log in, and get VM's local IP:
 
     ip addr show
 
-Add public key to allow password-less SSH login:
+Now, from the host's terminal, register the SSH keys:
 
-    mkdir ~/.ssh
-    cat > ~/.ssh/authorized_keys # then paste public key, press <enter> and <ctrl-D>
+    ssh-copy-id <username>@<ip-found-above>
+
+This will copy the standard named keys from your `~/.ssh` directory, for
+example `~/.ssh/id_ed25519.pub` and `~/.ssh/id_rsa.pub`.
 
 Enable password-less sudo:
 
