@@ -52,6 +52,8 @@ Prepare for installations:
     sudo dnf update
 
     sudo dnf remove -y vim-minimal
+    
+    sudo dnf upgrade-minimal
 
 Install tools:
 
