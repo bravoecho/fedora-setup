@@ -55,7 +55,7 @@ Prepare for installations:
     sudo dnf update
 
     sudo dnf remove -y vim-minimal
-    
+
     sudo dnf upgrade
 
 Reboot, as it will almost certainly have upgraded the kernel.
@@ -93,6 +93,7 @@ Install tools:
       ruby \
       sqlite \
       tar \
+      tig \
       tree \
       tmux \
       unzip \
