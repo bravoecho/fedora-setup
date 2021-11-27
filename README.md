@@ -1,38 +1,91 @@
-Install minimal version of Fedora server:
+Installation
+------------
 
-* Standard server image: <https://getfedora.org/en/server/download/>
+Install minimal version of Fedora server.
 
-* Create a VM with at least 3 GB RAM and 30 GB storage
+### Download
 
-* Keyboard: accept defaults
+Download the standard server image for your architecture. <https://getfedora.org/en/server/download/>
 
-  ![Keyboard selection](./img/01-keyboard.png)
+### RAM
 
-* Create an admin user:
+Create a VM with at least 3 GB RAM and 30 GB storage.
 
-  ![Summary - initial](./img/02-summary.png)
+### Keyboard
 
-  ![User creation](./img/03-user.png)
+Accept default keyboard settings (most of the times the installer guesses them
+correctly.)
 
-* Configure disk. It is not recommended to encrypt the device, as it reduces
-  the ability to compress the machine backup. Encrypting the backups is instead
-  advised.
+![Keyboard selection](./img/01-keyboard.png)
 
-  ![Summary - in progress](./img/04-summary.png)
+### User
 
-  ![Disk configuration](./img/05-disk.png)
+Create a nomal user, not a root account, and make it administrator.
 
-* Choose the minimal installation (~1.3 GB):
+![Summary - initial](./img/02-summary.png)
 
-  ![Summary - in progress, 2](./img/06-summary.png)
+![User creation](./img/03-user.png)
 
-  ![Custom package selection](./img/07-packages.png)
+### Disk configuration
 
-  ![Minimal installation](./img/08-minimal.png)
+By default the installer will only use half of the disk space when using
+automatic partitioning. To fully utilise the virtual device we need to
+customise the partitions.
 
-* Complete:
+Here we will assume that your virtual device is a 30 GB hard-drive.
 
-  ![Complete](./img/09-complete.png)
+![Summary - in progress](./img/04-summary.png)
+
+Select "Custom" storage configuration and then on "Done".
+
+![Select custom partition](./img/05-custom-partitioning.png)
+
+Start by creating the base structure automatically.
+
+![Create custom partition automatically](./img/06-automatic-custom.png)
+
+Select the `ext4` filesystem (it's more efficient for a development
+environment)
+
+![Use ext4 filesystem 1](./img/07-filesystem-1.png)
+
+![Use ext4 filesystem 2](./img/08-filesystem-2.png)
+
+Use all the available space. First type `30 GiB` (or the size of the virtual
+disk that you specified in your virtualisation solution) in the size field,
+then select "Modify" > "As large as possible" and confirm.
+
+![Specify size](./img/09-specify-size.png)
+
+![Use max size](./img/10-max-size.png)
+
+It is not recommended to encrypt the device, as it reduces the ability to
+compress the machine backup. Encrypting the backups is instead advised.
+
+Select "Done" and accept the partitioning changes.
+
+![Disk configuration](./img/11-partitioning-summary.png)
+
+![Accept partitioning](./img/12-accept-partitioning.png)
+
+### Software selection
+
+Choose the minimal installation (~1.3 GB):
+
+![Summary - in progress, 2](./img/13-summary.png)
+
+![Custom package selection](./img/14-packages.png)
+
+![Minimal installation](./img/15-minimal.png)
+
+### Summary
+
+Begin installation.
+
+![Complete](./img/16-complete.png)
+
+Initial setup
+-------------
 
 Logging in from the virtualisation software terminal is only necessary once.
 Log in, and get VM's local IP:
@@ -64,7 +117,10 @@ Remove old unused kernel(s):
 
     sudo dnf remove $(dnf repoquery --installonly --latest-limit=-1 -q)
 
-Install tools:
+Packages
+--------
+
+Install the most common tools up front available in the official repositories.
 
     sudo dnf install -y \
       bat \
@@ -134,7 +190,6 @@ Install dotfiles (optional, recommended)
     ./scripts/golang
     ./scripts/dotfiles
     ./scripts/vim
-
     ./scripts/ohmyzsh
     chsh -s $(which zsh)
 
@@ -163,11 +218,11 @@ with `rsync` when needed:)
     sudo vim /etc/samba/smb.conf
     sudo systemctl restart smb
 
-Install Terraform:
+Install Terraform for your architecture:
 
     cd ~/Downloads
-    wget https://releases.hashicorp.com/terraform/1.0.10/terraform_1.0.10_linux_arm64.zip
-    unzip terraform_1.0.10_linux_arm64.zip
+    wget https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_arm64.zip
+    unzip terraform_1.0.11_linux_arm64.zip
     mv terraform ~/.local/bin
     cd -
 
