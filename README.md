@@ -136,6 +136,7 @@ Install the most common tools up front available in the official repositories.
       jq \
       lsof \
       make \
+      mlocate \
       mtr \
       nmap \
       nnn \
