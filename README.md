@@ -146,6 +146,7 @@ Install the most common tools up front available in the official repositories.
       pbzip2 \
       pigz \
       pipx \
+      podman \
       ripgrep \
       rsync \
       ruby \
