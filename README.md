@@ -164,6 +164,12 @@ Install the most common tools up front available in the official repositories.
       zoxide \
       zsh
 
+Some applications still haven't updated to `python3.10`, and still rely on `python3.9`.
+
+    sudo install python3.9 -y
+
+and configure those apps to use 3.9.
+
 Install FZF (terminal fuzzy-finder):
 
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
