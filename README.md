@@ -128,6 +128,7 @@ Install the most common tools up front available in the official repositories.
       direnv \
       exa \
       fd-find \
+      gcc \
       git \
       git-delta \
       glibc \
