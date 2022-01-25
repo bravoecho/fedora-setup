@@ -124,6 +124,7 @@ Install the most common tools up front available in the official repositories.
 
     sudo dnf install -y \
       bat \
+      bind-utils \
       ctags \
       direnv \
       exa \
